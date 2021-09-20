@@ -1,12 +1,11 @@
 Package: covidataR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: An R package to extract data from the UK COVID19 dashboard API 
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Julian Flowers
+Maintainer: The package maintainer <julian.flowers13@gmail.com>
+Description: This packages interacts with the UK COVID19 data dashboard APIs <https://api.coronavirus.data.gov.uk/> to extract data on cases, deaths, vaccinations, tests and healthcare COVID related data
+License: Open Gov
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/julianflowers12/covidataR
