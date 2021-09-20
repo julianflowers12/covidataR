@@ -1,4 +1,15 @@
-## age-specific case data for Engand
+#' @title Get cases by age
+#'
+#' @description This function allows you extract age-specific case counts and rates for England in 5 year age bands as a timeseries.
+#' @param null
+#' @keywords cases
+#' @export
+#' @examples
+#' get_cases_age_england()
+
+
+
+## age-specific case data for England
 
 get_cases_age_england <- function(){
 
