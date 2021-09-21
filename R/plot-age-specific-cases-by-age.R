@@ -1,12 +1,13 @@
 #' @title Get cases by age
 #'
 #' @description This function allows you to plot age-specific case counts and rates for England in 5 year age bands as a timeseries.
-#' @param null
+#' @param age
 #' @keywords cases
 #' @export
 #' @examples
 #' get_cases_age_england()
 
+plot_cases_age_england(age = "00_59")
 
 
 ## age-specific case data for England
@@ -49,4 +50,3 @@ plot_cases_age_england <- function(age = "60+"){
 }
 
 
-plot_cases_age_england(age = "10_14")
