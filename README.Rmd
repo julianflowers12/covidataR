@@ -24,13 +24,14 @@ The goal of covidataR is to facilitate rapid access of UK COVID data into R for 
 
 You can install the released version of covidataR from [GitHub](https://github.com/) with:
 
-``` r
+```{r}
 # install.packages("devtools")
 devtools::install_github("julianflowers12/covidataR")
 ```
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+Extract data...
 
 ```{r example}
 library(covidataR)
@@ -41,3 +42,11 @@ head(df)
 
 ```
 
+Plot...
+
+```{r example1}
+library(covidataR)
+
+covidataR::plot_cases_age_england(age = "60_64")
+
+```

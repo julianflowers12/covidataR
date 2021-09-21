@@ -7,7 +7,7 @@
 get_cases_age_england()
 }
 \description{
-This function allows you extract age-specific case counts and rates in 5 year age bands as a timeseries.
+This function allows you extract age-specific case counts and rates for England in 5 year age bands as a timeseries.
 }
 \examples{
 get_cases_age_england()

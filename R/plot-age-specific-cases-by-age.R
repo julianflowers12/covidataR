@@ -5,9 +5,7 @@
 #' @keywords cases
 #' @export
 #' @examples
-#' get_cases_age_england()
-
-plot_cases_age_england(age = "00_59")
+#' plot_cases_age_england()
 
 
 ## age-specific case data for England
@@ -43,7 +41,9 @@ plot_cases_age_england <- function(age = "60+"){
     theme_minimal() +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
     labs(title = paste("Case rates in England \nAge: ", age),
-         y = "7-day rate per 100,000 population")
+         subtitle = paste("Created on: ", Sys.Date()),
+         y = "7-day rate per 100,000 population",
+         caption = "Source: https://api.coronavirus.data.gov.uk")
 
   print(plot)
 
