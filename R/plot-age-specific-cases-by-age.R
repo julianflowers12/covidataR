@@ -1,4 +1,4 @@
-#' @title Get cases by age
+#' @title Plot case-rates by age
 #'
 #' @description This function allows you to plot age-specific case counts and rates for England in 5 year age bands as a timeseries.
 #' @param age
