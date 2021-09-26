@@ -11,14 +11,15 @@
 
 ## age-specific case data for England
 
-get_cases_age_england <- function(age = NULL){
+get_cases_age_area <- function(age = NULL, areatype = NULL){
 
   require(jsonlite)
   require(dplyr)
   require(tidyr)
 
   age1 <- age
-  url <- "https://coronavirus.data.gov.uk/api/v1/data?filters=areaType=nation;areaName=England&structure=%7B%22areaType%22:%22areaType%22,%22areaName%22:%22areaName%22,%22areaCode%22:%22areaCode%22,%22date%22:%22date%22,%22newCasesBySpecimenDateAgeDemographics%22:%22newCasesBySpecimenDateAgeDemographics%22%7D&format=json"
+  area <- areatype
+  url <- paste0("https://coronavirus.data.gov.uk/api/v1/data?filters=areaType=",areatype,"&structure=%7B%22areaType%22:%22areaType%22,%22areaName%22:%22areaName%22,%22areaCode%22:%22areaCode%22,%22date%22:%22date%22,%22newCasesBySpecimenDateAgeDemographics%22:%22newCasesBySpecimenDateAgeDemographics%22%7D&format=json")
 
   data <- jsonlite::fromJSON(url, simplifyDataFrame = TRUE)
   data <- data$data %>%
@@ -28,6 +29,4 @@ get_cases_age_england <- function(age = NULL){
 
 }
 
-
-https://coronavirus.data.gov.uk/api/v1/data?filters=areaType=ltla;areaName=Torridge&structure=%7B%22areaType%22:%22areaType%22,%22areaName%22:%22areaName%22,%22areaCode%22:%22areaCode%22,%22date%22:%22date%22,%22newCasesBySpecimenDateAgeDemographics%22:%22newCasesBySpecimenDateAgeDemographics%22%7D&format=json
 
