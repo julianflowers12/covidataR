@@ -1,0 +1,46 @@
+---
+title: "Daily figures"
+author: "Julian Flowers"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, cache = TRUE)
+```
+
+```{r}
+if(!require("pacman"))install.packages("pacman")
+library(pacman)
+p_load(tidyverse, patchwork)
+p_load_gh("julianflowers/covidataR")
+```
+
+```{r}
+
+a <- plot_cases_age_england(age = c("05_09"))
+b <- plot_cases_age_england(age = c("10_14"))
+c <- plot_cases_age_england(age = c("15_19"))
+d <- plot_cases_age_england(age = c("20_24"))
+
+a + b  + c + d
+
+```
+
+```{r}
+
+young <- covidataR::get_vacc_coverage_england(age = "16_17") 
+y <- young %>%
+  ggplot(aes(date, cumVaccinationCompleteCoverageByVaccinationDatePercentage)) +
+  geom_line()
+  
+z <- covidataR::get_vacc_coverage_england(age = "18_24") %>%
+  ggplot(aes(date, cumVaccinationCompleteCoverageByVaccinationDatePercentage)) +
+  geom_line()
+
+x  <- covidataR::get_vacc_coverage_england(age = "65_69") %>%
+  ggplot(aes(date, cumVaccinationCompleteCoverageByVaccinationDatePercentage)) +
+  geom_line()
+
+y + z + x
+```
