@@ -44,3 +44,19 @@ x  <- covidataR::get_vacc_coverage_england(age = "65_69") %>%
 
 y + z + x
 ```
+
+```{r}
+school <- covidataR::get_cases_age_area(age = "15_19", areatype = "utla")
+
+school %>%
+  group_by(date) %>%
+  ggplot(aes(date, rollingRate, group = date)) +
+  geom_boxplot(fill = "blue", colour = "blue", outlier.colour = "red") +
+  theme_minimal()
+
+school %>%
+  filter(rollingRate > 2000) %>%
+  pluck("areaName") %>%
+  unique()
+```
+
