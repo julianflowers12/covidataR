@@ -17,21 +17,8 @@ You can install the released version of covidataR from
 ``` r
 # install.packages("devtools")
 devtools::install_github("julianflowers12/covidataR")
-#> Downloading GitHub repo julianflowers12/covidataR@HEAD
-#>      checking for file ‘/private/var/folders/bk/jrqs03tx5mq9s28mhml5xzhm0000gn/T/RtmpP9Ru0P/remotes1228b6cb5e262/julianflowers12-covidataR-bb87d0e/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/bk/jrqs03tx5mq9s28mhml5xzhm0000gn/T/RtmpP9Ru0P/remotes1228b6cb5e262/julianflowers12-covidataR-bb87d0e/DESCRIPTION’
-#>   ─  preparing ‘covidataR’:
-#>    checking DESCRIPTION meta-information ...  ✓  checking DESCRIPTION meta-information
-#>   ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>    Omitted ‘LazyData’ from DESCRIPTION
-#>   ─  building ‘covidataR_0.1.0.tar.gz’
-#>      
-#> 
-#> Installing package into '/Users/julianflowers/Dropbox/Mac (2)/Desktop/covidataR/renv/library/R-4.1/aarch64-apple-darwin20'
-#> (as 'lib' is unspecified)
-#> Warning in i.p(...): installation of package '/var/folders/bk/
-#> jrqs03tx5mq9s28mhml5xzhm0000gn/T//RtmpP9Ru0P/file1228b1921c7b0/
-#> covidataR_0.1.0.tar.gz' had non-zero exit status
+#> Skipping install of 'covidataR' from a github remote, the SHA1 (5bbaf2f4) has not changed since last install.
+#>   Use `force = TRUE` to force installation
 ```
 
 ## Example
@@ -41,7 +28,7 @@ Extract data…
 ``` r
 library(covidataR)
 
-df <- covidataR::get_cases_age_england()
+df <- covidataR::get_cases_age_england(age = "00_59")
 #> Loading required package: jsonlite
 #> Loading required package: dplyr
 #> 
@@ -56,13 +43,13 @@ df <- covidataR::get_cases_age_england()
 head(df)
 #> # A tibble: 6 × 8
 #>   areaType areaName areaCode  date       age   cases rollingSum rollingRate
-#>   <chr>    <chr>    <chr>     <chr>      <chr> <int>      <int>       <dbl>
-#> 1 nation   England  E92000001 2021-09-15 00_04   558       4064        126.
-#> 2 nation   England  E92000001 2021-09-15 00_59 19519     129230        301.
-#> 3 nation   England  E92000001 2021-09-15 05_09  2397      14732        416.
-#> 4 nation   England  E92000001 2021-09-15 10_14  4360      25127        731.
-#> 5 nation   England  E92000001 2021-09-15 15_19  2077      14482        465.
-#> 6 nation   England  E92000001 2021-09-15 20_24   963       7346        212.
+#>   <chr>    <chr>    <chr>     <date>     <chr> <int>      <int>       <dbl>
+#> 1 nation   England  E92000001 2021-09-21 00_59 27270     155415        362.
+#> 2 nation   England  E92000001 2021-09-20 00_59 28796     147890        345.
+#> 3 nation   England  E92000001 2021-09-19 00_59 22184     140959        329.
+#> 4 nation   England  E92000001 2021-09-18 00_59 18533     134288        313.
+#> 5 nation   England  E92000001 2021-09-17 00_59 19548     130181        304.
+#> 6 nation   England  E92000001 2021-09-16 00_59 19440     128316        299.
 ```
 
 Plot…
@@ -70,7 +57,7 @@ Plot…
 ``` r
 library(covidataR)
 
-covidataR::plot_cases_age_england(age = "10_14")
+covidataR::plot_cases_age_england(age = "00_59")
 #> Loading required package: ggplot2
 #> Loading required package: zoo
 #> 
