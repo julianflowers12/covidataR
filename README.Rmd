@@ -47,6 +47,6 @@ Plot...
 ```{r example1}
 library(covidataR)
 
-covidataR::plot_cases_age_england(age = "00_59")
+covidataR::plot_cases_age_england(age = "05_09")
 
 ```

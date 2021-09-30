@@ -33,7 +33,7 @@ get_cases_by_area_heatmap <- function(areatype = NULL, areaname = NULL){
     ggplot(aes(date, age, fill = rollingRate)) +
     geom_tile() +
     scale_x_date(breaks = "months") +
-    viridis::scale_fill_viridis(option = "inferno", direction = 1) +
+    viridis::scale_fill_viridis(option = "plasma", direction = 1) +
     theme_minimal() +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
     labs(title = paste("Case rates in: ", area_name),
